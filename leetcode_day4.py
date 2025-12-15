@@ -17,3 +17,17 @@ class Solution:
             b = cnt
             
         return b
+#leetcode_problem_library_solution4
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        nums = nums1 + nums2
+        nums.sort()
+        a = len(nums)
+
+        if a % 2 == 1:
+            b = (a - 1)/2
+            return nums[int(b)]
+        else:
+            b = int(a/2)
+            c = nums[b] + nums[b-1]
+            return c/2
