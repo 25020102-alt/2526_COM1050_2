@@ -17,7 +17,7 @@ class Solution:
             b = cnt
             
         return b
-#leetcode_problem_library_solution4
+#leetcode_problem_library_solution4 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         nums = nums1 + nums2
@@ -31,3 +31,22 @@ class Solution:
             b = int(a/2)
             c = nums[b] + nums[b-1]
             return c/2
+#leetcode_problem_library_solution5
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        a = []
+        for i in range(len(s)):
+            char = s[i]
+            for j in range(i + 1, len(s)):
+                char = s[j] + char
+                if s[i : j +1] == char:
+                    a.append(char)
+        
+        if a == []:
+            return s[0]
+            
+        b = ""
+        for i in a:
+            if len(i) > len(b):
+                b = i
+        return b
