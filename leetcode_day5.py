@@ -1,4 +1,4 @@
-#solution7/75
+#leetcode75_solution7/75
 class Solution:
     def reverse(self, x: int) -> int:
         a = x
@@ -17,3 +17,49 @@ class Solution:
             return 0
         else:
             return dn
+#88.merge sort array
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        a = nums1[:m] 
+        b = nums2[:n]
+        nums = a + b
+        nums.sort()
+        nums1[:] = nums
+#217. contain deplicate
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        a = set()
+        for i in nums:
+            if i in a:
+                return True
+            else:
+                a.add(i)
+        return False
+#242. valid anagram
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+      if len(s) != len(t):
+        return False
+      else:
+        a = list(t)
+        for i in s:
+            if i in a:
+                a.remove(i)
+            else:
+                return False
+        
+        if a == []:
+            return True
+        else:
+            return False 
+#169. majority element
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        a = len(nums)//2
+        b = nums[a]
+        if nums.count(b) > a:
+            return b   
