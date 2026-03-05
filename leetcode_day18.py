@@ -17,8 +17,8 @@ class Solution:
             n[j] = min(n[j], b - j)
         
         return n 
-    #825. Friends of Approriate Ages
-    #solution 1
+#825. Friends of Approriate Ages
+#solution 1
     class Solution:
     def numFriendRequests(self, ages: List[int]) -> int:
         ages.sort()
